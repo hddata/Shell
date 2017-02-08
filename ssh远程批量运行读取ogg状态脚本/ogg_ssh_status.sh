@@ -3,7 +3,7 @@
 #
 #$#脚本参数
 if [ "$#" -ne 2 ] ; then
-    echo "USAGE: $0 -f server_list_file cmd"
+    echo "USAGE: $0 + hostlist + server_list_file cmd"
     exit -1
 fi
 
@@ -28,7 +28,7 @@ fi
 var=`rpm -qa|grep sshpass`
 if [ ! -n "$var" ]; then
   echo "you should install sshpass first"
-  read -p "是否安装sshpass？是(y)---否(其他): "  tem
+  read -p "Install sshpass? yes--y    no--exit: "  tem
   if [ "$tem" == 'y' -o "$tem" == 'Y' ]; then
     rpm -vih sshpass-1.05-7.1.x86_64.rpm
   else
@@ -45,9 +45,9 @@ for i in `seq $num`;do
     pass=`awk ''NR==$i' {print $3}' $hostlist_file`
     address=`awk ''NR==$i' {print $4}' $hostlist_file`
     sed -i "2i OGG_HOME=$address" $cmd_file
-    echo "------"$ip"------"
-    sshpass -p "$pass" ssh -t $user@$ip<$cmd_file
-   # ssh $user@$ip "bash"<$cmd_file >ogg.log
+    echo "----------"$ip"----------"
+    sshpass -p "$pass" ssh -t $user@$ip -o StrictHostKeyChecking=no <$cmd_file 2>/dev/null    
+   # sshpass -p "$pass" ssh -t $user@$ip<$cmd_file
 
     if [ $? -eq 0 ] ; then
         echo "$cmd_str Executed Successfully!"
