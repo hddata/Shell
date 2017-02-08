@@ -1,5 +1,5 @@
 #!/bin/bash   
-#ogg_ssh_status.sh-v1.0
+#ogg_ssh_status.sh-v1.1
 #
 #$#脚本参数
 if [ "$#" -ne 2 ] ; then

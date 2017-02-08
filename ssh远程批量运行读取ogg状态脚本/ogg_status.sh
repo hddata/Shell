@@ -1,6 +1,6 @@
 #! /bin/bash
 
-OGG_status="$OGG_HOME/status"
+OGG_status="$OGG_HOME/Status____ogg"
 mkdir -p $OGG_status
 echo "info all">$OGG_status/info.txt
 
@@ -45,10 +45,7 @@ nowtime=`date +"%Y-%m-%d %H:%M:%S"`
 echo "present time："$nowtime
 echo "Status  Name  Time    "
 cat $OGG_status/status_.txt
-cd $OGG_status
-ls >$OGG_status/tem.txt
+
 echo ""
 echo "rm file " $OGG_status"/"
-cat $OGG_status/tem.txt
-echo "-----------------------"
 rm -r $OGG_status
