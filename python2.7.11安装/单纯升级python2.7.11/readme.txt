@@ -1,4 +1,5 @@
 ﻿准备：挂载yum
+脚本里的yum是我本地的配置，可自行修改，已经配置好的，可以删掉这几句话
 上传python_.zip包  位置没要求
 
 
@@ -18,12 +19,3 @@ source ./python_install.sh  （注：source+空格+点/python_install.sh ）
 5 安装virtualenv-15.0.3
 6 安装wheel-0.29.0
 
-
-测试源地址
-https://pypi.python.org/simple
-http://127.0.0.1/simple
-
-脚本结束后第一次使用python的办法
-1：执行语句  . /etc/profile
-2：重新开一个窗口
-注：python的环境已经写入环境变量的文件，刷新的语句在脚本里的时候，环境变量只有在脚本里才有效。脚本结束后就回到脚本执行前的环境。
