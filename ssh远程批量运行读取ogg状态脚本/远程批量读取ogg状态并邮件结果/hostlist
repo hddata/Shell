@@ -1,0 +1,4 @@
+192.168.43.176 root root  /root/ggs_mysql
+192.168.43.198 root root  /root/ggs_mysql
+192.168.43.10 oracle oracle /u01/app/ogg
+192.168.43.2 oracle oracle /u01/app/ogg
