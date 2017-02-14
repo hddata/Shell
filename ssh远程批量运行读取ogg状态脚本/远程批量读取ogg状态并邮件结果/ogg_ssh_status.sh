@@ -3,7 +3,7 @@
 #
 #$#脚本参数
 if [ "$#" -ne 2 ] ; then
-    echo "USAGE: $0 + hostlist + server_list_file cmd"
+    echo "USAGE: ogg_ssh_status.sh hostlist ogg_status.sh"
     exit -1
 fi
 
