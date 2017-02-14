@@ -1,7 +1,6 @@
 #!/bin/bash   
-
 #trust.sh-v1.1
-
+#
 checkfile()
 {
   if [ ! -f $1 ]
