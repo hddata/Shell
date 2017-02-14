@@ -52,7 +52,7 @@ if [ ! -n "$var" ]; then
   read -p "Install sshpass? yes(y)---else(exit): "  tem
   if [ "$tem" == 'y' -o "$tem" == 'Y' ]; then
     rpm -vih sshpass-1.05-7.1.x86_64.rpm
-    rpm -ev sshpass-1.05-7.1.x86_64 --nodeps
+  #  rpm -ev sshpass-1.05-7.1.x86_64 --nodeps
   else
     exit 0
   fi
