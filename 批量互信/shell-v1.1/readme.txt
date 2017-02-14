@@ -1,4 +1,4 @@
-hostlist£ºip+space+user+space+passwd
+hostlist : ip+space+user+space+passwd
 Hostlist1 is the first trust, after adding the host in hostlist2
 
 chmod 755 *.sh
