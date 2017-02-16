@@ -1,11 +1,13 @@
-hostlist文件格式：ip+空格+user+空格+密码+空格+ogg路径
-不要出现错误信息以及空行
-全部必须在同一路径下 
-.sh文件执行之前需要  chmod 755 **.sh
+hostlist : ip+space+user+space+passwd
+Don't get error messages and blank lines
+all files need under the same path
+chmod 755 *.sh
 
-crontab_ogg_ssh.sh
-测试机python是2.7.11的，所以需要需要先升级python
-PATH="$PATH":/usr/local/python-2.7.11/bin
-pwd_变量是当前路径
 
-smtplib_2.py里面的密码为授权码（qq测试）
+/etc/init.d/crond status
+query status，if crond is stoped you should
+/etc/init.d/crond start
+
+
+0 8 * * * sh /opt/ogg_status/emain_ogg_ssh.sh
+#Run the script at 8 o'clock every day

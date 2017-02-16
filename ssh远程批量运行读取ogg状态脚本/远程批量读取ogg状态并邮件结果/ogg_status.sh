@@ -42,7 +42,7 @@ else
 fi
 
 nowtime=`date +"%Y-%m-%d %H:%M:%S"`
-echo "present time："$nowtime
+echo "present time: "$nowtime
 echo "Status  Name  Time    "
 cat $OGG_status/status_.txt
 
