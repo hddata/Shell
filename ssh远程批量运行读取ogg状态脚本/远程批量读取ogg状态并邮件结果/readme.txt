@@ -5,7 +5,7 @@ chmod 755 *.sh
 
 
 /etc/init.d/crond status
-query status£¬if crond is stoped you should
+query status , if crond is stoped you should
 /etc/init.d/crond start
 
 
