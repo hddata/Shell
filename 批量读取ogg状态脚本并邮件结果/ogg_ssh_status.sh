@@ -3,12 +3,13 @@
 #
 #$#脚本参数
 if [ "$#" -ne 2 ] ; then
-    echo "USAGE: $0 + hostlist + server_list_file cmd"
+    echo 'USAGE: "./ogg_ssh_status.sh hostlist ogg_status.sh" '
     exit -1
 fi
 
 file_name=$1
 cmd_str=$2
+
 cwd=$(pwd)
 cd $cwd
 hostlist_file="$cwd/$file_name"
