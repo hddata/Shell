@@ -48,7 +48,6 @@ for i in `seq $num`;do
     sed -i "2i OGG_HOME=$address" $cmd_file
     echo "----------"$ip"----------"
     sshpass -p "$pass" ssh -t $user@$ip -o StrictHostKeyChecking=no <$cmd_file 2>/dev/null    
-   # sshpass -p "$pass" ssh -t $user@$ip<$cmd_file
 
     if [ $? -eq 0 ] ; then
         echo "$cmd_str Executed Successfully!"

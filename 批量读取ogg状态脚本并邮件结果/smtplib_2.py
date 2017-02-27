@@ -25,7 +25,7 @@ password = "******"
 pwd = os.getcwd()
 text_ = pwd + '/ogg_status.log'
 HOST = "mail.travelsky.com"
-#HOST = "smtp.travelsky.com"
+
 
 msg = MIMEMultipart()
 msg['Subject'] = "ogg status"
@@ -37,9 +37,8 @@ xlsxpart.add_header('Content-Disposition', 'attachment', filename=STIME+'--ogg_s
         decode("utf-8").encode("gb18030"))
 msg.attach(xlsxpart)
 try:
-    server = smtplib.SMTP()
-    server.connect(HOST, "25")
-    #server.connect(HOST,"465")
+    server = smtplib.SMTP_SSL()
+    server.connect(HOST,"465")
     server.starttls()
     server.login(FROM, password)
     server.sendmail(msg['From'], TO, msg.as_string())
