@@ -1,5 +1,6 @@
 #! /bin/bash
 
+OGG_HOME=/zzdata/ogg
 OGG_status="$OGG_HOME/Status____ogg"
 mkdir -p $OGG_status
 echo "info all">$OGG_status/info.txt
@@ -42,6 +43,7 @@ else
 fi
 
 nowtime=`date +"%Y-%m-%d %H:%M:%S"`
+echo $OGG_HOME
 echo "present time: "$nowtime
 echo "Status  Name  Time    "
 cat $OGG_status/status_.txt

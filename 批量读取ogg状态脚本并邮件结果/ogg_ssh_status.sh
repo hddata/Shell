@@ -45,7 +45,7 @@ for i in `seq $num`;do
     user=`awk ''NR==$i' {print $2}' $hostlist_file`
     pass=`awk ''NR==$i' {print $3}' $hostlist_file`
     address=`awk ''NR==$i' {print $4}' $hostlist_file`
-    sed -i "2i OGG_HOME=$address" $cmd_file
+    sed -i "/^OGG_HOME=/c\OGG_HOME="$address"" $cmd_file
     echo "----------"$ip"----------"
     sshpass -p "$pass" ssh -t $user@$ip -o StrictHostKeyChecking=no <$cmd_file 2>/dev/null    
 
@@ -56,5 +56,4 @@ for i in `seq $num`;do
         echo "error: " $?
     fi
 
-    sed -i '2d' $cmd_file
 done
